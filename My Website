@@ -1,0 +1,25 @@
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        // File name
+        String fileName = "index.html";
+
+        // HTML code for the page
+        String html = "<html>\n" +
+                      "  <head>\n" +
+                      "    <title>Store2U</title>\n" +
+                      "  </head>\n" +
+                      "  <body>\n" +
+                      "    <h1>Store2U</h1>\n" +
+                      "    <p>We offer grocery deliveries</p>\n" +
+                      "  </body>\n" +
+                      "</html>";
+
+        // Write the HTML code to a file
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+              new FileOutputStream(fileName), "utf-8"))) {
+            writer.write(html);
+        }
+    }
+}
